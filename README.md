@@ -16,7 +16,17 @@
 
 ## 添加 commit-msg 校验
 
-### 参考链接 https://typicode.github.io/husky/#/?id=locally-installed-binaries
+### 参考链接
+
+<!--
+  https://typicode.github.io/husky/#/?id=locally-installed-binaries
+
+  https://github.com/conventional-changelog/commitlint/#what-is-commitlint
+
+  https://blog.csdn.net/wh1t3z/article/details/121630908?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1-121630908-blog-108993305.pc_relevant_antiscanv4&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1-121630908-blog-108993305.pc_relevant_antiscanv4&utm_relevant_index=1
+
+  https://juejin.cn/post/6990307028162281508
+ -->
 
 ```
   1. yarn add lint-staged @commitlint/cli @commitlint/config-angular -D

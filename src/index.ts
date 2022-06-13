@@ -1,8 +1,8 @@
-var a: string = "123";
+let a: string = '123';
 console.log(a);
 
-let notSure: Object = "";
-console.log("notSure----notSure", notSure.constructor);
+let notSure: Object = '';
+console.log('notSure----notSure', notSure.constructor);
 
 // any 数据类型:
 // 1. 可以是任意的数据类型
@@ -42,10 +42,10 @@ interface Person {
   [propName: string]: any;
 }
 let person: Person = {
-  name: "张三",
+  name: '张三',
   age: 10,
-  sex: "male",
-  son: "张无忌",
+  sex: 'male',
+  son: '张无忌',
 };
 
 // 数组：
@@ -53,20 +53,22 @@ let person: Person = {
 //      2. Array<类型> // Array<number>
 //      3. interface方式
 
-let list = [1, 2, 3, 4, 5, "6"];
+let list = [1, 2, 3, 4, 5, '6'];
 
 interface NumberArray {
   [index: number]: number | string;
 }
+
 // 类数组
 interface Args {
   [index: number]: any;
   length: number;
   callee: Function;
 }
+
 function test1() {
   const args: IArguments | Args = arguments;
-  console.log("args----args", args);
+  console.log('args----args', args);
 }
 
 // 函数注解
@@ -82,11 +84,11 @@ const test2: (a: number, b: number) => number = (a, b) => {
 // 函数的重载
 
 function reverse(x: number | string) {
-  if (typeof x === "string") {
-    return x.split("").reverse().join("");
+  if (typeof x === 'string') {
+    return x.split('').reverse().join('');
   }
-  if (typeof x === "number") {
-    return x.toString().split("").reverse().join("");
+  if (typeof x === 'number') {
+    return x.toString().split('').reverse().join('');
   }
 }
 console.log(reverse(123345));
@@ -103,7 +105,7 @@ class Animal {
     console.log(`${this.name} moved ${distance}m.`);
   }
   weight(kg: number) {
-    console.log("kg----kg", kg);
+    console.log('kg----kg', kg);
   }
 }
 
@@ -114,12 +116,12 @@ class Dog extends Animal {
     super(name);
   }
   move(distance: number = 0) {
-    console.log("slitthering.....");
+    console.log('slitthering.....');
     super.move(distance);
   }
 }
 
-let newAnimal = new Dog("我叫啥");
+let newAnimal = new Dog('我叫啥');
 
 // 类OOP: 封装、继承、多态
 

@@ -36,3 +36,9 @@
   4. 可以绕过commit-msg检查: git commit -m "xxxxx" --no-verify
 
 ```
+
+```
+    补充：
+        执行git config --list找到core.hookspath=.husky,
+        在 git 2.9 中引入了 core.hooksPath,可参考[Git 钩子(Hook)](https://www.coder.work/article/1518931)
+```

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    blob对象
+    <!-- 同源才可以下载， 否则跳转 -->
+    <a href="https://www.baidu.com" id="btn" download>下载</a>
+    <input type="file" id="input">
+<body>
+    <!-- blob对象 文件下载、图片预览-->
+    <script>
+        // var str1 = '123'
+        // var textblob = new Blob([str1], {
+        //     type: 'text/plain'
+        // })
+        // console.log(textblob)
+
+        var str2 = `<div>
+                        <p>12345</p>
+                    </div>`
+        var htmlblob = new Blob([str2], {
+            type: 'text/html'
+        })
+        console.log(htmlblob) 
+        
+        var abtn = document.getElementById("btn")
+        abtn.onclick = function() {
+            this.setAttribute('download', 'index.html')
+            // H5
+            this.href=URL.createObjectURL(htmlblob)
+        }
+
+        input.onchange = function(e) {
+            var file = e.target.files[0]
+            // file继承blob
+            console.log('file---file', file)
+            var img = new Image()
+            img.src= URL.createObjectURL(file)
+            document.body.appendChild(img)
+
+
+            // fileReader
+            var fileReader = new FileReader()
+            fileReader.onload = function() {
+                img.src= fileReader.result
+            }
+            fileReader.readAsDataURL(file)
+        }
+    </script>
+</body>
+</html>
